@@ -13,15 +13,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # Install Node.js, which is needed for Firebase CLI
+      # Install Node.js (necessary for Firebase CLI)
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Adjust the version if necessary
+          node-version: "14"
 
-      # Install Firebase CLI
+      # Clear npm cache (optional troubleshooting step)
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      # Install Firebase CLI globally
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
+
+      # Verify Firebase CLI installation
+      - name: Verify Firebase CLI
+        run: firebase --version
 
       # Deploy to Firebase Hosting
       - name: Deploy to Firebase
