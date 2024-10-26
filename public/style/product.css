@@ -1,0 +1,15 @@
+/* Product Page CSS */
+.product-page {
+    padding: 20px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+}

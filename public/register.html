@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - CellQuest</title>
+    <link rel="stylesheet" href="style/register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register for CellQuest</h2>
+      <form id="registerForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+
+        <button type="submit">Register</button>
+        <p id="errorMessage"></p>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </form>
+    </div>
+
+    <!-- Firebase and JavaScript Files -->
+    <script src="script/firebaseConfig.js" type="module"></script>
+    <script src="script/register.js" type="module"></script>
+  </body>
+</html>
