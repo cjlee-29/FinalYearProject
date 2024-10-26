@@ -13,15 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      # Install Node.js, which is needed for Firebase CLI
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "14" # Adjust the version if necessary
 
-      # Remove the "npm run build" step if your project doesn't require a build
-      # - name: Build Project
-      #   run: npm run build
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
 
+      # Deploy to Firebase Hosting
       - name: Deploy to Firebase
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
